@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    background-color: white;
+    width: 87%;
+    height: 50rem;
+    border-radius: 8px;
+    box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.152073);
+    padding: 3.5rem 2.4rem;
+
+
+    .pageview {
+        color: var(--neutral-700)
+    }
+}

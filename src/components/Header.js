@@ -1,4 +1,4 @@
-import styles from './Header.module.css'
+import styles from './header.module.scss'
 
 const Header = () => {
     return (
