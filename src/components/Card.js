@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Slider from './Slider.js';
 import styles from './card.module.scss';
-import iconCheck from '../images/icon-slider.svg'
 
 const Card = () => {
     const [value, setValue] = useState('100K');
@@ -10,8 +9,11 @@ const Card = () => {
 
 
     useEffect(() => {
+        if (isMonthly === false) {
+            setPrice(p => p * 0.75)
+        }
         if (isMonthly === true) {
-            console.log('a')
+            setPrice(p => p * 1.25)
         }
     }, [isMonthly])
 
@@ -35,7 +37,7 @@ const Card = () => {
             <div className={styles.pageview}>
                 <h4>{value} PAGEVIEWS</h4>
             </div>
-            <Slider changeValue={setValue} changePrice={setPrice} />
+            <Slider changeValue={setValue} changePrice={setPrice} discount={isMonthly} />
             <div className={styles.billingTag}>
                 <h4 className={styles.price}>${price.toString()} <span className={styles.monthly}>/ month</span></h4>
             </div>

@@ -16,22 +16,22 @@ const Slider = (props) => {
 
     const updatePrice = (e) => {
         const value = e.target.value;
-        console.log(value)
+        let multiplier = props.discount ? 1 : 0.75;
         switch (value) {
             case '-2':
-                props.changePrice((8).toFixed(2));
+                props.changePrice((8 * multiplier).toFixed(2));
                 break;
             case '-1':
-                props.changePrice((12).toFixed(2));
+                props.changePrice((12 * multiplier).toFixed(2));
                 break;
             case '1':
-                props.changePrice((24).toFixed(2));
+                props.changePrice((24 * multiplier).toFixed(2));
                 break;
             case '2':
-                props.changePrice((36).toFixed(2));
+                props.changePrice((36 * multiplier).toFixed(2));
                 break;
             default:
-                props.changePrice((16).toFixed(2));
+                props.changePrice((16 * multiplier).toFixed(2));
 
         }
     }
